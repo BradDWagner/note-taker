@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const uuid = require('./helpers/uuid')
-const { update } = require('./helpers/update')
+const { update, read } = require('./helpers/fsHelp')
 const path = require('path');
 const notes = require('./db/db.json')
 
@@ -23,8 +23,7 @@ app.get('/notes', (req, res) => {
 })
 
 app.get('/api/notes', (req, res) => {
-    console.log (notes);
-    res.json(notes);
+    read('./db/db.json').then((data) => res.json(JSON.parse(data)))
 })
 
 app.post('/api/notes', (req, res) => {

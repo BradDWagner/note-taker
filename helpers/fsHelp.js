@@ -1,4 +1,5 @@
 const fs = require('fs');
+const util = require('util')
 
 const update = (content, file) => {
     fs.readFile(file, 'utf-8', (err, data) => {
@@ -16,4 +17,6 @@ const update = (content, file) => {
     })
 }
 
-module.exports = {update};
+const read = util.promisify(fs.readFile)
+
+module.exports = {update, read};
