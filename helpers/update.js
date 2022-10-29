@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { builtinModules } = require('module');
 
 const update = (content, file) => {
     fs.readFile(file, 'utf-8', (err, data) => {
