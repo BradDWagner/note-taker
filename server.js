@@ -1,29 +1,28 @@
+//import modules
 const express = require('express');
 const fs = require('fs');
 const uuid = require('./helpers/uuid')
-const { update, read } = require('./helpers/fsHelp')
+const { update, read, deleteEntry } = require('./helpers/fsHelp')
 const path = require('path');
-const notes = require('./db/db.json')
+
+const notesDb = './db/db.json'
 
 const PORT = process.env.PORT || 3001
 
 const app = express();
 
+//add middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-
-app.get('/' , (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-} );
 
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 })
 
 app.get('/api/notes', (req, res) => {
-    read('./db/db.json').then((data) => res.json(JSON.parse(data)))
+    read(notesDb).then((data) => res.json(JSON.parse(data)))
 })
 
 app.post('/api/notes', (req, res) => {
@@ -36,13 +35,23 @@ app.post('/api/notes', (req, res) => {
             id: uuid(),
         };
 
-    update(newNote, './db/db.json')
+    update(newNote, notesDb)
     
-    res.json(notes);
+    res.json('success');
     } else {
         res.json('error in posting note')
     }
 })
+
+app.delete('/api/notes/:id', (req, res) =>{
+    const id = req.params.id;
+    deleteEntry(id, notesDb)
+    res.send('deleted')
+})
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+} );
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
