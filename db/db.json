@@ -1,11 +1,27 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
+        "title": "Never forget",
+        "text": "To brush your teeth",
+        "id": "90be"
     },
     {
-        "title": "Let's add  note",
-        "text": "here it is\n",
-        "id": "5ba4"
+        "title": "Gonna do this weekend",
+        "text": "-Take a nap\n-Eat snacks",
+        "id": "e5e7"
+    },
+    {
+        "title": "Give away list",
+        "text": "-old clothes\n-old books",
+        "id": "53d2"
+    },
+    {
+        "title": "You need to remember",
+        "text": "To check the mail and take out the recycling",
+        "id": "9e47"
+    },
+    {
+        "title": "Up for debate",
+        "text": "“Whether 'tis nobler in the mind to suffer\nThe slings and arrows of outrageous fortune,\nOr to take arms against a sea of troubles,\nAnd by opposing end them?”\n--Shakespeare",
+        "id": "7f89"
     }
 ]

@@ -10,10 +10,6 @@
 
   ♦︎[Usage](#usage)
 
-  ♦︎[Contributing](#contributing)
-
-  ♦︎[Tests](#tests)
-
   ♦︎[Questions](#questions)
 
   ## Installation
@@ -26,23 +22,14 @@
 
   ## Usage
 
-  If running application from the repo, after installing dependencies as described above, run ```npm start``` from the command line to initialize server. The application can then be accessed by navigating to http://localhost:3001 in the browser. From there, or if running from deployed site at heroku, the user will be greeted with a welcome page, simply click the "Get Started" button to be taken to the note taker. Once in the note taker the user can find their saved notes on the left hand side to be read at any time, or deleted by clicking the red trash can. To add a new note, select the plus button in the top right corner and fill in the note title and note text. To save a note, click the save icon in the top right.
+  If running application from the repo, after installing dependencies as described above, run ```npm start``` from the command line to initialize server. The application can then be accessed by navigating to http://localhost:3001 in the browser. From there, or if running from deployed site at [https://rocky-depths-59583.herokuapp.com/](https://rocky-depths-59583.herokuapp.com/), the user will be greeted with a welcome page, simply click the "Get Started" button to be taken to the note taker. Once in the note taker the user can find their saved notes on the left hand side to be read at any time, or deleted by clicking the red trash can. To add a new note, select the plus button in the top right corner and fill in the note title and note text. To save a note, click the save icon in the top right.
+
+  ![The deployed note taker](./images/deployed-screenshot.png)
 
   ## License
 
   This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
-  ## Contributing
-
-  
-
-  ## Tests
-
-  To run tests, run the following command:
-
-  ```
-   
-  ```
 
   ## Questions
 
